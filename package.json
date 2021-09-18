@@ -22,6 +22,15 @@
     "generate": "stencil generate",
     "prepublishOnly": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Antonio-Laguna/Quizes.git"
+  },
+  "author": {
+    "url": "https://antonio.laguna.es",
+    "email": "antonio@laguna.es",
+    "name": "Antonio Laguna"
+  },
   "keywords": [
     "stencil",
     "stenciljs",
