@@ -1,0 +1,8 @@
+.quiz__progress {
+  display: block;
+}
+
+.quiz__progress__value {
+  height: 100%;
+  width: 0;
+}

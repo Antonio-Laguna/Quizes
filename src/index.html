@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Quizes Demo</title>
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+
+    <script type="module" src="/build/quizes.esm.js"></script>
+    <script nomodule src="/build/quizes.js"></script>
+    <style>
+      html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        box-sizing: border-box;
+        font-size: 100%;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+
+      .container {
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        max-width: 72rem;
+        position: relative;
+        width: 100%;
+      }
+
+      .quiz {
+        border: 1px solid;
+        padding: 1rem;
+        border-radius: 0.25rem;
+        max-width: 41.875rem;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .quiz__progress {
+        position: absolute;
+        top: 0;
+        background-color: rgba(253, 131, 3, .3);
+        left: 0;
+        right: 0;
+        height: 4px;
+      }
+
+      .quiz__progress__value {
+        background-color: rgb(253, 131, 3);
+        height: 100%;
+        transition: width .3s;
+        width: 0;
+      }
+
+      .quiz__steps {
+        height: 0;
+        overflow: hidden;
+      }
+
+      .quiz__steps__wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .quiz__step {
+        padding: 1rem 0;
+      }
+
+      .quiz__step--intro {
+        text-align: center;
+      }
+
+      .quiz__step--intro button {
+        margin: 1rem auto;
+        display: block;
+      }
+
+      .is-ready .quiz__step {
+        transition: opacity .3s;
+      }
+
+      .is-ready .quiz__step:not(.is-visible) {
+        opacity: 0;
+      }
+
+      .question__label {
+        display: block;
+      }
+
+      @media screen and (prefers-reduced-motion: no-preference) {
+        .is-ready .quiz__steps {
+          transition: height 0.3s;
+        }
+
+        .is-ready .quiz__steps__wrapper {
+          transition: transform .3s;
+          will-change: transform;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <quiz-es
+        questions-key="questions"
+        start-text="Start the quiz"
+        next-text="Ok"
+      >
+        <h2 slot="quiz-title" class="quiz__title">Are you a true LOTR fan?</h2>
+        <div slot="quiz-description" class="quiz__description">
+          <p>Answer these questions and prove yourself worthy.</p>
+        </div>
+        <div slot="quiz-result" class="quiz__result">
+          <p>You've finished it!</p>
+        </div>
+      </quiz-es>
+    </div>
+  <script>
+    window.questions = [
+      {
+        title: "When Frodo and the other hobbits first meet Aragorn, he goes by what name?",
+        choices: [
+          "Arathorn",
+          "Ranger",
+          "Strider",
+          "Elessar"
+        ],
+        answer: 2
+      },
+      {
+        title: "To open the gate to Moria, Gandalf says the Elvish word for __________.",
+        choices: [
+          "Enter",
+          "Friend",
+          "Dwarf",
+          "Open"
+        ],
+        answer: 1
+      },
+      {
+        title: "At the beginning of 'The Fellowship of the Ring', Bilbo is celebrating his birthday. How old is he?",
+        choices: [
+          "77",
+          "89",
+          "101",
+          "111"
+        ],
+        answer: 3
+      },
+      {
+        title: "In what country was 'The Lord of the Rings' trilogy filmed?",
+        choices: [
+          "Australia",
+          "Norway",
+          "England",
+          "New Zeland"
+        ],
+        answer: 3
+      },
+    ]
+  </script>
+  </body>
+</html>
