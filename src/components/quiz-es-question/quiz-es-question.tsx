@@ -32,8 +32,9 @@ export class QuizEsQuestion {
           current-step={this.currentStep}
           type="question"
         >
-          {this.question}
+          <h3 class="question__title">{this.question}</h3>
 
+          <div class="question__choices">
           {
             this.choices.map((choice, index) => (
               <label class="question__label">
@@ -48,6 +49,7 @@ export class QuizEsQuestion {
               </label>
             ))
           }
+          </div>
 
           <button
             type="button"
