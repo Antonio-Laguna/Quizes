@@ -58,14 +58,17 @@ export class QuizEs {
   }
 
   componentDidLoad() {
-    this.steps = Array.from(this.el.querySelectorAll('.quiz__step'));
-    this.bounds = this.steps.map(el => el.offsetHeight);
-    this.stepsEl = this.el.querySelector('.quiz__steps');
-    this.stepsWrapperEl = this.el.querySelector('.quiz__steps__wrapper');
+    // Leaving time for all of the things to render
+    setTimeout(() => {
+      this.steps = Array.from(this.el.querySelectorAll('.quiz__step'));
+      this.bounds = this.steps.map(el => el.offsetHeight);
+      this.stepsEl = this.el.querySelector('.quiz__steps');
+      this.stepsWrapperEl = this.el.querySelector('.quiz__steps__wrapper');
 
-    this.shrinkToStep();
+      this.shrinkToStep();
 
-    requestAnimationFrame(() => this.el.classList.add('is-ready'));
+      requestAnimationFrame(() => this.el.classList.add('is-ready'));
+    });
   }
 
   shrinkToStep(step = this.step) {
