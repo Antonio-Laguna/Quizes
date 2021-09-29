@@ -18,8 +18,8 @@ There are three strategies we recommend for using web components built with Sten
 ### Node Modules
 
 - Run `npm install quizes --save`
-- Put a script tag similar to this `<script src="node_modules/quizes/dist/quizes.esm.js"></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
+- Import `import { defineCustomElements } from 'quizes';`
+- Run `defineCustomElements()`
 
 ### In a stencil-starter app
 
