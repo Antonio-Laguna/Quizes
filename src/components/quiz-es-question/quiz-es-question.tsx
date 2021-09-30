@@ -32,13 +32,13 @@ export class QuizEsQuestion {
           current-step={this.currentStep}
           type="question"
         >
-          <h3 class="question__title">{this.question}</h3>
+          <h3 class="question__title" innerHTML={this.question} />
 
           <div class="question__choices">
           {
             this.choices.map((choice, index) => (
               <label class="question__label">
-                {choice}
+                <span class="label__text" innerHTML={choice} />
                 <input
                   class="question__input"
                   type="radio"
