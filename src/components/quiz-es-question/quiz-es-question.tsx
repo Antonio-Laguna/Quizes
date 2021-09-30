@@ -36,18 +36,23 @@ export class QuizEsQuestion {
 
           <div class="question__choices">
           {
-            this.choices.map((choice, index) => (
-              <label class="question__label">
-                <span class="label__text" innerHTML={choice} />
-                <input
-                  class="question__input"
-                  type="radio"
-                  value={index}
-                  name={questionIndex}
-                  onChange={() => this.handleInputChange(index)}
-                />
-              </label>
-            ))
+            this.choices.map((choice, index) => {
+              const id = `question-${this.step}-choice-${index + 1}`;
+
+              return (
+                <div class="question__field">
+                  <input
+                    class="question__input"
+                    type="radio"
+                    id={id}
+                    value={index}
+                    name={questionIndex}
+                    onChange={() => this.handleInputChange(index)}
+                  />
+                  <label htmlFor={id} class="question__label" innerHTML={choice} />
+                </div>
+              );
+            })
           }
           </div>
 
