@@ -1,6 +1,6 @@
 {
   "name": "quizes",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "OS Webcomponent to create a quiz",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
