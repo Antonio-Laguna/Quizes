@@ -38,7 +38,8 @@
   ],
   "dependencies": {
     "@stencil/core": "^2.8.1",
-    "classnames": "^2.3.1"
+    "classnames": "^2.3.1",
+    "tinybounce": "^1.2.0"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",

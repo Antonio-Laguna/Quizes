@@ -9,6 +9,7 @@ import {
   Event,
   EventEmitter
 } from '@stencil/core';
+import tinybounce from 'tinybounce';
 import classNames from 'classnames';
 
 type Question = {
@@ -69,6 +70,13 @@ export class QuizEs {
 
       requestAnimationFrame(() => this.el.classList.add('is-ready'));
     });
+
+    window.addEventListener('resize', tinybounce(this.handleWindowResize.bind(this), 250));
+  }
+
+  handleWindowResize() {
+    this.bounds = this.steps.map(el => el.offsetHeight);
+    this.shrinkToStep();
   }
 
   shrinkToStep(step = this.step) {
